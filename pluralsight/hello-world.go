@@ -45,3 +45,34 @@ func gridRepor(activePlants []int, plantCapacities []float64, gridLoad float64){
 	fmt.Println("Load: ", gridLoad)
 	fmt.Println("Utilization: ", gridLoad/capacity)
 }
+
+
+type PlantType string
+
+const(
+	hydro PlantType = "Hydro"
+	wind PlantType = "Wind"
+	solar PlantType = "Solar"
+)
+
+type PlantStatus string
+
+const(
+	active PlantStatus = "Active"
+	inactive PlantStatus = "Inactive"
+	unavailable PlantStatus = "Unavailable"
+)
+
+type PowerPlant struct {
+	plantType PlantType
+	capacity float64
+	status PlantStatus
+}
+
+type PowerGrid struct {
+	load float64
+	plants []PowerPlant
+}
+
+
+
